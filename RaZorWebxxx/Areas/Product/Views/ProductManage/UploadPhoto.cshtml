@@ -1,0 +1,16 @@
+﻿@model RaZorWebxxx.Areas.Products.ProductManageController.UploadOneFile
+
+
+@{ 
+    ProducModel product = ViewData["product"] as ProducModel;
+}
+
+
+<h1>uploadphoto :@product.Title</h1>
+<form  method="post" enctype="multipart/form-data">
+    <label asp-for="@Model.FileUpload"></label>
+    <input asp-for="@Model.FileUpload" />
+    <span asp-validation-for="@Model.FileUpload"></span>
+    <button class="btn btn-primary" asp-action="UploadPhoto" asp-route-id="@product.ProductId">Upload</button>
+
+</form>
